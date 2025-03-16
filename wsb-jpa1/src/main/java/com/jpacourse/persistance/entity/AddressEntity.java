@@ -19,6 +19,12 @@ public class AddressEntity {
 
 	private String postalCode;
 
+	@OneToOne(mappedBy = "address")
+	private DoctorEntity doctor;		//relacja 2-stronna
+
+	@OneToOne(mappedBy = "address")
+	private PatientEntity patient;		//relacja 2-stronna
+
 	public Long getId() {
 		return id;
 	}

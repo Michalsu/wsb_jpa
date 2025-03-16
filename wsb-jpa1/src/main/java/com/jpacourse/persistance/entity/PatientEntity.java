@@ -29,6 +29,9 @@ public class PatientEntity {
 	@Column(nullable = false)
 	private LocalDate dateOfBirth;
 
+	@OneToOne
+	private AddressEntity address; //relacja 2-stronna
+
 	public Long getId() {
 		return id;
 	}

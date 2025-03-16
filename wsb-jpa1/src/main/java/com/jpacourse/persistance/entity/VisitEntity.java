@@ -1,8 +1,11 @@
 package com.jpacourse.persistance.entity;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 import jakarta.persistence.*;
+
+import javax.print.Doc;
 
 @Entity
 @Table(name = "VISIT")
@@ -11,6 +14,10 @@ public class VisitEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@ManyToMany(mappedBy = "visits")
+	private Collection<DoctorEntity> doctors;
+
 
 	private String description;
 

@@ -3,6 +3,11 @@ package com.jpacourse.persistance.entity;
 import com.jpacourse.persistance.enums.Specialization;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.springframework.data.repository.query.FluentQuery;
+
+import java.util.Collection;
 
 @Entity
 @Table(name = "DOCTOR")
@@ -29,6 +34,13 @@ public class DoctorEntity {
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Specialization specialization;
+
+	@OneToOne
+	private AddressEntity address;	//relacja 2-stronna
+
+	@ManyToMany
+	@JoinTable(name = "doctor_to_address", joinColumns = @JoinColumn(name = "doctor_id"),inverseJoinColumns = @JoinColumn(name = "visit_id"))
+	private Collection<VisitEntity> visits;
 
 	public Long getId() {
 		return id;
