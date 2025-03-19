@@ -19,11 +19,13 @@ public class AddressEntity {
 
 	private String postalCode;
 
-	@OneToOne(mappedBy = "address")
-	private DoctorEntity doctor;		//relacja 2-stronna
 
+	//Adress 1:1 <-> Doctor
 	@OneToOne(mappedBy = "address")
-	private PatientEntity patient;		//relacja 2-stronna
+	private DoctorEntity doctor;
+
+	//Adress 1:1 <- Patient
+
 
 	public Long getId() {
 		return id;

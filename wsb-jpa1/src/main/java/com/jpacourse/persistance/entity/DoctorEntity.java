@@ -35,11 +35,13 @@ public class DoctorEntity {
 	@Enumerated(EnumType.STRING)
 	private Specialization specialization;
 
+	//Adress 1:1 <-> Doctor
 	@OneToOne
-	private AddressEntity address;	//relacja 2-stronna
+	private AddressEntity address;
 
+	//Visit x:x <-> Doctor
 	@ManyToMany
-	@JoinTable(name = "doctor_to_address", joinColumns = @JoinColumn(name = "doctor_id"),inverseJoinColumns = @JoinColumn(name = "visit_id"))
+	@JoinTable(name = "doctor_to_visit", joinColumns = @JoinColumn(name = "doctor_id"),inverseJoinColumns = @JoinColumn(name = "visit_id"))
 	private Collection<VisitEntity> visits;
 
 	public Long getId() {

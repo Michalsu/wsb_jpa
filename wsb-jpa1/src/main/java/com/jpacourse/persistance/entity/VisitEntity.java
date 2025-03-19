@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.print.Doc;
 
@@ -15,8 +17,20 @@ public class VisitEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	//Visit x:x <-> Doctor
 	@ManyToMany(mappedBy = "visits")
 	private Collection<DoctorEntity> doctors;
+
+	//Visit x:1 <-> Patient
+	@ManyToOne
+	@JoinColumn(name = "patient_id")
+	private PatientEntity patient;
+
+
+	//Visit 1:x  -> MedicalTreatment
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+	@JoinColumn(name="visit_id")
+	private Collection<MedicalTreatmentEntity> treatments;
 
 
 	private String description;
