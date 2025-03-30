@@ -26,6 +26,7 @@ public class DoctorEntity {
 	@Column(nullable = false)
 	private String telephoneNumber;
 
+	@Column(nullable = true)
 	private String email;
 
 	@Column(nullable = false)
@@ -36,7 +37,7 @@ public class DoctorEntity {
 	private Specialization specialization;
 
 	//Adress 1:1 <-> Doctor
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	private AddressEntity address;
 
 	//Visit x:x <-> Doctor

@@ -22,6 +22,7 @@ public class PatientEntity {
 	@Column(nullable = false)
 	private String telephoneNumber;
 
+	@Column(nullable = true)
 	private String email;
 
 	@Column(nullable = false)
@@ -31,11 +32,12 @@ public class PatientEntity {
 	private LocalDate dateOfBirth;
 
 	//Adress 1:1 <- Patient
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "address_id")
 	private AddressEntity address;
 
 	//Visit x:1 <-> Patient
+	@Column(nullable = false)
 	@OneToMany(mappedBy = "patient")
 	private Collection<VisitEntity> visits;
 
@@ -95,4 +97,19 @@ public class PatientEntity {
 		this.dateOfBirth = dateOfBirth;
 	}
 
+	public AddressEntity getAddress() {
+		return address;
+	}
+
+	public void setAddress(AddressEntity address) {
+		this.address = address;
+	}
+
+	public Collection<VisitEntity> getVisits() {
+		return visits;
+	}
+
+	public void setVisits(Collection<VisitEntity> visits) {
+		this.visits = visits;
+	}
 }

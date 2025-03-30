@@ -32,7 +32,7 @@ public class VisitEntity {
 	@JoinColumn(name="visit_id")
 	private Collection<MedicalTreatmentEntity> treatments;
 
-
+	@Column(nullable = false)
 	private String description;
 
 	@Column(nullable = false)
