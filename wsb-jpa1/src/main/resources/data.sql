@@ -67,26 +67,26 @@ VALUES (9, 9, 'Marek', 'Kaczmarek', '444555666', 'marek.k@example.com', 'P009', 
 INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
 VALUES (10, 10,'Joanna', 'Mazur', '666777888', 'joanna.m@example.com', 'P010', '1975-04-29');
 
-INSERT INTO VISIT (id, patient_id, description, time)
-VALUES (1, 1, 'Rutynowa kontrola', '2024-03-29 10:00:00');
-INSERT INTO VISIT (id, patient_id, description, time)
-VALUES (2, 2, 'Badanie kontrolne ciśnienia', '2024-03-30 09:15:00');
-INSERT INTO VISIT (id, patient_id, description, time)
-VALUES (3, 3, 'Konsultacja dermatologiczna', '2024-03-31 11:30:00');
-INSERT INTO VISIT (id, patient_id, description, time)
-VALUES (4, 4, 'Badanie krwi', '2024-04-01 08:45:00');
-INSERT INTO VISIT (id, patient_id, description, time)
-VALUES (5, 5, 'USG jamy brzusznej', '2024-04-02 14:00:00');
-INSERT INTO VISIT (id, patient_id, description, time)
-VALUES (6, 6, 'Rehabilitacja pourazowa', '2024-04-03 15:30:00');
-INSERT INTO VISIT (id, patient_id, description, time)
-VALUES (7, 7, 'Konsultacja neurologiczna', '2024-04-04 10:00:00');
-INSERT INTO VISIT (id, patient_id, description, time)
-VALUES (8, 8, 'Badanie EKG', '2024-04-05 13:15:00');
-INSERT INTO VISIT (id, patient_id, description, time)
-VALUES (9, 9, 'Wizyta u ortopedy', '2024-04-06 12:45:00');
-INSERT INTO VISIT (id, patient_id, description, time)
-VALUES (10, 10, 'Kontrola po zabiegu chirurgicznym', '2024-04-07 16:20:00');
+INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
+VALUES (1, 1, 10, 'Rutynowa kontrola', '2024-03-29 10:00:00');
+INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
+VALUES (2, 2, 9, 'Badanie kontrolne ciśnienia', '2024-03-30 09:15:00');
+INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
+VALUES (3, 3, 8, 'Konsultacja dermatologiczna', '2024-03-31 11:30:00');
+INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
+VALUES (4, 4, 7, 'Badanie krwi', '2024-04-01 08:45:00');
+INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
+VALUES (5, 5, 6, 'USG jamy brzusznej', '2024-04-02 14:00:00');
+INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
+VALUES (6, 6, 5, 'Rehabilitacja pourazowa', '2024-04-03 15:30:00');
+INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
+VALUES (7, 7, 4, 'Konsultacja neurologiczna', '2024-04-04 10:00:00');
+INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
+VALUES (8, 8, 3, 'Badanie EKG', '2024-04-05 13:15:00');
+INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
+VALUES (9, 9, 2, 'Wizyta u ortopedy', '2024-04-06 12:45:00');
+INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
+VALUES (10, 10, 1, 'Kontrola po zabiegu chirurgicznym', '2024-04-07 16:20:00');
 
 INSERT INTO MEDICAL_TREATMENT (id, visit_id, description, type)
 VALUES (1, 1, 'Badanie krwi', 'EKG');
@@ -108,24 +108,3 @@ INSERT INTO MEDICAL_TREATMENT (id, visit_id,description, type)
 VALUES (9, 8, 'Szczepienie przeciwko grypie', 'RTG');
 INSERT INTO MEDICAL_TREATMENT (id, visit_id,description, type)
 VALUES (10, 9, 'Terapia psychologiczna', 'USG');
-
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (1, 3);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (2, 6);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (3, 1);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (4, 8);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (5, 5);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (6, 7);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (3, 9);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (7, 2);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (2, 10);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (5, 4);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (6, 3);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (7, 5);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (4, 6);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (8, 7);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (3, 10);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (9, 1);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (10, 9);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (2, 4);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (1, 8);
-INSERT INTO DOCTOR_TO_VISIT (doctor_id, visit_id) VALUES (10, 2);

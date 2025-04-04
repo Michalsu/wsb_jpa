@@ -14,7 +14,7 @@ Przy kazdej relacji napisz jako komentarz czy jest to relacja jednostronna od st
 7. Uzupelnij plik data.sql danymi (komendy insert) w odpowiedniej kolejnosci potwierdzajac poprawnosc modelu
 
 Visit 1:x  -> MedicalTreatment
-Visit x:x <-> Doctor
+Visit x:1 <-> Doctor
 Visit x:1 <-> Patient
 Adress 1:1 <- Patient
 Adress 1:1 <-> Doctor

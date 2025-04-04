@@ -17,9 +17,10 @@ public class VisitEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	//Visit x:x <-> Doctor
-	@ManyToMany(mappedBy = "visits")
-	private Collection<DoctorEntity> doctors;
+	//Visit x:1 <-> Doctor
+	@ManyToOne
+	@JoinColumn(name = "doctor_id")
+	private DoctorEntity doctor;
 
 	//Visit x:1 <-> Patient
 	@ManyToOne

@@ -40,9 +40,8 @@ public class DoctorEntity {
 	@OneToOne(cascade = CascadeType.PERSIST)
 	private AddressEntity address;
 
-	//Visit x:x <-> Doctor
-	@ManyToMany
-	@JoinTable(name = "doctor_to_visit", joinColumns = @JoinColumn(name = "doctor_id"),inverseJoinColumns = @JoinColumn(name = "visit_id"))
+	//Visit x:1 <-> Doctor
+	@OneToMany(mappedBy = "doctor")
 	private Collection<VisitEntity> visits;
 
 	public Long getId() {
