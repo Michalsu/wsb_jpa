@@ -1,11 +1,17 @@
 package com.jpacourse.dto;
 
 import com.jpacourse.persistance.entity.AddressEntity;
+import com.jpacourse.persistance.entity.FinishedVisitEntity;
+import com.jpacourse.persistance.entity.MedicalTreatmentEntity;
 import com.jpacourse.persistance.entity.VisitEntity;
+import com.jpacourse.persistance.enums.TreatmentType;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedHashSet;
 
 public class PatientTO implements Serializable {
 
@@ -27,9 +33,33 @@ public class PatientTO implements Serializable {
 
     private Collection<VisitEntity> visits;
 
+    private Collection<FinishedVisitEntity> finishedVisits;
+
+
 
     public Long getId() {
         return id;
+    }
+
+    public Collection<FinishedVisitEntity> getFinishedVisits() {
+        return finishedVisits;
+    }
+
+    public void setFinishedVisits(Collection<VisitEntity> visits) {
+        Collection<FinishedVisitEntity> finishedVisits = new ArrayList<>();
+        for (VisitEntity visitEntity : visits) {
+            if (visitEntity.getTime().isBefore(LocalDateTime.now())){
+                FinishedVisitEntity newFinishedVisitEntity = new FinishedVisitEntity();
+                newFinishedVisitEntity.setDateOfVisit(visitEntity.getTime());
+                newFinishedVisitEntity.setDoctorName(visitEntity.getDoctor().getFirstName());
+                newFinishedVisitEntity.setDoctorSurname(visitEntity.getDoctor().getLastName());
+                for (MedicalTreatmentEntity medicalTreatmentEntity : visitEntity.getTreatments()){
+                    newFinishedVisitEntity.treatmentTypes.add(medicalTreatmentEntity.getType());
+                }
+                finishedVisits.add(newFinishedVisitEntity);
+            }
+        }
+        this.finishedVisits = finishedVisits;
     }
 
     public void setId(Long id) {
