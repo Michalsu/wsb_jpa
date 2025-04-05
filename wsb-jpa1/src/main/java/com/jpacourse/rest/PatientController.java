@@ -10,7 +10,7 @@ public class PatientController {
 
     private final PatientService patientService;
 
-    public PatientController(PatientService patientService) {this  .patientService = patientService;}
+    public PatientController(PatientService patientService) {this.patientService = patientService;}
 
     @GetMapping("/patient/{id}")
     PatientTO findById(@PathVariable Long id) {
