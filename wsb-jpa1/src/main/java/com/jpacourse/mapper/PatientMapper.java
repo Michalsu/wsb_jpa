@@ -18,6 +18,7 @@ public class PatientMapper {
         patientTO.setDateOfBirth(patientEntity.getDateOfBirth());
         patientTO.setAddress(patientEntity.getAddress());
         patientTO.setVisits(patientEntity.getVisits());
+        patientTO.setAlive(patientEntity.getAlive());
         return patientTO;
     }
 
@@ -35,6 +36,7 @@ public class PatientMapper {
         patientEntity.setDateOfBirth(patientTO.getDateOfBirth());
         patientEntity.setAddress(patientTO.getAddress());
         patientEntity.setVisits(patientTO.getVisits());
+        patientEntity.setAlive(patientTO.getAlive());
         return patientEntity;
     }
 

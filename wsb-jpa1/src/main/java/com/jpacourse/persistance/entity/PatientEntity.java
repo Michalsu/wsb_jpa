@@ -41,6 +41,17 @@ public class PatientEntity {
 	@OneToMany(mappedBy = "patient")
 	private Collection<VisitEntity> visits;
 
+	@Column(name = "alive", nullable = false)
+	private Boolean isAlive;
+
+	public Boolean getAlive() {
+		return isAlive;
+	}
+
+	public void setAlive(Boolean alive) {
+		isAlive = alive;
+	}
+
 	public Long getId() {
 		return id;
 	}

@@ -46,26 +46,26 @@ VALUES (10, 1, 'Joanna', 'Mazur', '666777888', 'joanna.m@example.com', 'D010', '
 
 
 
-INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (1, 1, 'Jan', 'Kowalski', '123456789', 'jan.kowalski@example.com', 'P001', '1985-07-12');
-INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (2, 2, 'Anna', 'Nowak', '987654321', 'anna.nowak@example.com', 'P002', '1990-05-23');
-INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (3, 3, 'Piotr', 'Wiśniewski', '555666777', 'piotr.w@example.com', 'P003', '1978-11-30');
-INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (4, 4, 'Magda', 'Zielińska', '888999000', 'magda.z@example.com', 'P004', '1983-02-14');
-INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (5, 5, 'Tomasz', 'Dąbrowski', '111222333', 'tomasz.d@example.com', 'P005', '1995-09-08');
-INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (6, 6, 'Ewa', 'Lewandowska', '333444555', 'ewa.l@example.com', 'P006', '2000-06-25');
-INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (7, 7, 'Krzysztof', 'Kamiński', '777888999', 'krzysztof.k@example.com', 'P007', '1969-03-18');
-INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (8, 8, 'Aleksandra', 'Wójcik', '222333444', 'aleksandra.w@example.com', 'P008', '1992-12-05');
-INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (9, 9, 'Marek', 'Kaczmarek', '444555666', 'marek.k@example.com', 'P009', '1987-08-22');
-INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (10, 10,'Joanna', 'Mazur', '666777888', 'joanna.m@example.com', 'P010', '1975-04-29');
+INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, alive)
+VALUES (1, 1, 'Jan', 'Kowalski', '123456789', 'jan.kowalski@example.com', 'P001', '1985-07-12', true);
+INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, alive)
+VALUES (2, 2, 'Anna', 'Nowak', '987654321', 'anna.nowak@example.com', 'P002', '1990-05-23', true);
+INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, alive)
+VALUES (3, 3, 'Piotr', 'Wiśniewski', '555666777', 'piotr.w@example.com', 'P003', '1978-11-30', true);
+INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, alive)
+VALUES (4, 4, 'Magda', 'Zielińska', '888999000', 'magda.z@example.com', 'P004', '1983-02-14', true);
+INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, alive)
+VALUES (5, 5, 'Tomasz', 'Dąbrowski', '111222333', 'tomasz.d@example.com', 'P005', '1995-09-08', true);
+INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, alive)
+VALUES (6, 6, 'Ewa', 'Lewandowska', '333444555', 'ewa.l@example.com', 'P006', '2000-06-25', false);
+INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, alive)
+VALUES (7, 7, 'Krzysztof', 'Kamiński', '777888999', 'krzysztof.k@example.com', 'P007', '1969-03-18', true);
+INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, alive)
+VALUES (8, 8, 'Aleksandra', 'Wójcik', '222333444', 'aleksandra.w@example.com', 'P008', '1992-12-05', true);
+INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, alive)
+VALUES (9, 9, 'Marek', 'Kaczmarek', '444555666', 'marek.k@example.com', 'P009', '1987-08-22', false);
+INSERT INTO PATIENT (id, address_id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, alive)
+VALUES (10, 10,'Joanna', 'Mazur', '666777888', 'joanna.m@example.com', 'P010', '1975-04-29', true);
 
 INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
 VALUES (1, 1, 10, 'Rutynowa kontrola', '2024-03-29 10:00:00');

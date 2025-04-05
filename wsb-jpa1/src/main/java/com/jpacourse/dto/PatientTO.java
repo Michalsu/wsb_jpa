@@ -35,7 +35,15 @@ public class PatientTO implements Serializable {
 
     private Collection<FinishedVisitEntity> finishedVisits;
 
+    private Boolean isAlive;
 
+    public Boolean getAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(Boolean alive) {
+        isAlive = alive;
+    }
 
     public Long getId() {
         return id;
