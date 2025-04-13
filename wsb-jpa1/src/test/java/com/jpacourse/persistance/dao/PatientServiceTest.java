@@ -1,6 +1,7 @@
 package com.jpacourse.persistance.dao;
 
 
+import com.jpacourse.dto.PatientTO;
 import com.jpacourse.persistance.entity.PatientEntity;
 import com.jpacourse.service.PatientService;
 import org.junit.jupiter.api.Test;
@@ -23,7 +24,16 @@ public class PatientServiceTest {
 
     @Transactional
     @Test
-    public void testDeletePatient() {
+    public void testShouldFindPatientId() {
+        PatientTO patientTO = patientService.findPatientById(5L);
+        assert patientTO != null;
+        assert patientTO.getId() == 5L;
+    }
+
+
+    @Transactional
+    @Test
+    public void testShouldDeletePatient() {
         //given
         PatientEntity patientEntity = patientDao.findOne(5L);
 
