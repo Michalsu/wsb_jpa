@@ -41,7 +41,7 @@ public class DoctorEntity {
 	private AddressEntity address;
 
 	//Visit x:1 <-> Doctor
-	@OneToMany(mappedBy = "doctor")
+	@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Collection<VisitEntity> visits;
 
 	public Long getId() {

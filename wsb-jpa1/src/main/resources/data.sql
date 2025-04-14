@@ -76,7 +76,7 @@ VALUES (3, 3, 8, 'Konsultacja dermatologiczna', '2024-03-31 11:30:00');
 INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
 VALUES (4, 4, 7, 'Badanie krwi', '2024-04-01 08:45:00');
 INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
-VALUES (5, 5, 6, 'USG jamy brzusznej', '2024-04-02 14:00:00');
+VALUES (5, 5, 5, 'USG jamy brzusznej', '2024-04-02 14:00:00');
 INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
 VALUES (6, 6, 5, 'Rehabilitacja pourazowa', '2024-04-03 15:30:00');
 INSERT INTO VISIT (id, patient_id, doctor_id, description, time)

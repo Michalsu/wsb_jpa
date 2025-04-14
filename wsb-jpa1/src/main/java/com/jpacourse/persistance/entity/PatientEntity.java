@@ -38,7 +38,7 @@ public class PatientEntity {
 
 	//Visit x:1 <-> Patient
 	@Column(nullable = false)
-	@OneToMany(mappedBy = "patient")
+	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Collection<VisitEntity> visits;
 
 	@Column(name = "alive", nullable = false)
