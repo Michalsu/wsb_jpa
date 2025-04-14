@@ -85,8 +85,6 @@ INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
 VALUES (8, 8, 3, 'Badanie EKG', '2024-04-05 13:15:00');
 INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
 VALUES (9, 9, 2, 'Wizyta u ortopedy', '2024-04-06 12:45:00');
-INSERT INTO VISIT (id, patient_id, doctor_id, description, time)
-VALUES (10, 10, 1, 'Kontrola po zabiegu chirurgicznym', '2024-04-07 16:20:00');
 
 INSERT INTO MEDICAL_TREATMENT (id, visit_id, description, type)
 VALUES (1, 1, 'Badanie krwi', 'EKG');
@@ -103,8 +101,5 @@ VALUES (6, 7, 'Gastroskopia', 'RTG');
 INSERT INTO MEDICAL_TREATMENT (id, visit_id,description, type)
 VALUES (7, 6, 'Wizyta kontrolna', 'RTG');
 INSERT INTO MEDICAL_TREATMENT (id, visit_id,description, type)
-VALUES (8, 10, 'Operacja usunięcia wyrostka', 'USG');
-INSERT INTO MEDICAL_TREATMENT (id, visit_id,description, type)
 VALUES (9, 8, 'Szczepienie przeciwko grypie', 'RTG');
-INSERT INTO MEDICAL_TREATMENT (id, visit_id,description, type)
-VALUES (10, 9, 'Terapia psychologiczna', 'USG');
+
